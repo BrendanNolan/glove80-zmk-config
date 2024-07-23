@@ -150,12 +150,12 @@
 
         Symbols1 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans      &trans  &trans     &trans         &trans                                                                                    &trans         &trans        &trans        &trans         &trans
+&trans      &trans  &trans     &trans         &trans         &trans                                                      &trans         &trans         &trans        &trans        &trans         &trans
+&trans      &trans  &trans     &double_arrow  &single_arrow  &kp GRAVE                                                   &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
+&kp DELETE  &trans  &kp LC(B)  &kp BSLH       &kp FSLH       &kp LBKT                                                    &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &trans
+&trans      &trans  &trans     &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans  &trans  &trans  &trans  &trans   &trans         &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
+&trans      &trans  &trans     &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &kp TAB                 &trans         &trans        &trans        &trans         &trans
             >;
         };
 
