@@ -77,6 +77,20 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        single_arrow: single_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GREATER_THAN>;
+            label = "SINGLE_ARROW";
+        };
+
+        double_arrow: double_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GREATER_THAN>;
+            label = "DOUBLE_ARROW";
+        };
     };
 
     keymap {
@@ -96,7 +110,7 @@
 &none          &none       &none     &none     &none     &none                                                   &none  &none     &none      &none     &none            &none
 &none          &kp Q       &lt 17 W  &lt 14 E  &lt 7 R   &kp T                                                   &kp Y  &kp U     &lt 15 I   &lt 16 O  &kp P            &none
 &kp BACKSPACE  &lt 8 A     &lt 10 S  &lt 6 D   &lt 12 F  &kp G                                                   &kp H  &lt 13 J  &kp K      &kp L     &lt 5 SEMICOLON  &kp ENTER
-&none          &kp Z       &kp X     &lt 11 C  &kp V     &kp B  &none  &none  &none  &kp LGUI  &none  &none      &kp N  &kp M     &kp COMMA  &kp DOT   &none            &none
+&tog 0         &kp Z       &kp X     &lt 11 C  &kp V     &kp B  &none  &none  &none  &kp LGUI  &none  &none      &kp N  &kp M     &kp COMMA  &kp DOT   &none            &none
 &none          &none       &none     &none     &none            &sl 4  &sl 9  &none  &none     &sl 9  &kp SPACE         &none     &none      &none     &none            &none
             >;
         };
