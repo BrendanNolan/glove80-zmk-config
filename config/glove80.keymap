@@ -161,12 +161,12 @@
 
         Symbols2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans         &trans                                                                               &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans         &trans        &trans                                                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &kp LS(LT)     &kp LS(GT)    &kp LS(CARET)                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans         &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans         &trans                       &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
