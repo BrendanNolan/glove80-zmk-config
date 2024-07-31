@@ -159,12 +159,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&sl 1          &magic 2 0       &sl 3             &none             &none                                                                                                       &none                 &none             &none             &none                    &none
-&none          &sl 4            &sl 4             &sl 4             &sl 4                  &sl 4                                                                     &kp SPACE  &kp SPACE             &kp SPACE         &kp SPACE         &kp SPACE                &none
-&none          &kp Q            &hm_brendan 17 W  &hm_brendan 14 E  &hm_brendan 12 R       &kp T                                                                     &kp Y      &hm_brendan 13 U      &hm_brendan 15 I  &hm_brendan 16 O  &kp P                    &none
-&kp BACKSPACE  &hm_brendan 8 A  &hm_brendan 10 S  &hm_brendan 6 D   &tapF_doubletapLayer4  &hm_brendan 7 G                                                           &kp H      &tapJ_doubletapSpace  &kp K             &kp L             &hm_brendan 5 SEMICOLON  &kp ENTER
-&tog 0         &kp Z            &kp X             &hm_brendan 11 C  &kp V                  &kp B            &sl 4  &none  &none  &none         &none      &kp SPACE  &kp N      &kp M                 &kp COMMA         &kp DOT           &kp EQUAL                &none
-&none          &none            &none             &none             &none                                   &sl 4  &sl 4  &none  &kp LEFT_GUI  &kp SPACE  &kp SPACE             &none                 &none             &none             &none                    &none
+&sl 1          &magic 2 0       &sl 3             &none             &none                                                                                                  &none             &none             &none             &none                    &none
+&none          &sl 4            &sl 4             &sl 4             &sl 4             &sl 4                                                                     &kp SPACE  &kp SPACE         &kp SPACE         &kp SPACE         &kp SPACE                &none
+&none          &kp Q            &hm_brendan 17 W  &hm_brendan 14 E  &kp R             &kp T                                                                     &kp Y      &kp U             &hm_brendan 15 I  &hm_brendan 16 O  &kp P                    &none
+&kp BACKSPACE  &hm_brendan 8 A  &hm_brendan 10 S  &hm_brendan 6 D   &hm_brendan 12 F  &hm_brendan 7 G                                                           &kp H      &hm_brendan 13 J  &kp K             &kp L             &hm_brendan 5 SEMICOLON  &kp ENTER
+&tog 0         &kp Z            &kp X             &hm_brendan 11 C  &kp V             &kp B            &sl 9  &none  &none  &none         &none      &sl 9      &kp N      &kp M             &kp COMMA         &kp DOT           &kp EQUAL                &none
+&none          &none            &none             &none             &none                              &sl 4  &sl 4  &none  &kp LEFT_GUI  &kp SPACE  &kp SPACE             &none             &none             &none             &none                    &none
             >;
         };
 
