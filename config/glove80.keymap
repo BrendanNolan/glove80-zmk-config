@@ -135,6 +135,20 @@
             bindings = <&kp EQUAL &kp GREATER_THAN>;
             label = "DOUBLE_ARROW";
         };
+
+        tmux_scroll: tmux_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LEFT_BRACKET>;
+            label = "TMUX_SCROLL";
+        };
+
+        tmux_search_up: tmux_search_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LEFT_BRACKET &kp QUESTION>;
+            label = "TMUX_SEARCH_UP";
+        };
     };
 
     combos {
@@ -159,12 +173,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&sl 1          &magic 2 0       &sl 3             &none             &none                                                                                                  &none             &none             &none             &none                    &none
-&none          &sl 4            &sl 4             &sl 4             &sl 4             &sl 4                                                                     &kp SPACE  &kp SPACE         &kp SPACE         &kp SPACE         &kp SPACE                &none
-&none          &kp Q            &hm_brendan 17 W  &hm_brendan 14 E  &hm_brendan 4 R   &kp T                                                                     &kp Y      &hm_brendan 4 U   &hm_brendan 15 I  &hm_brendan 16 O  &kp P                    &none
-&kp BACKSPACE  &hm_brendan 8 A  &hm_brendan 10 S  &hm_brendan 6 D   &hm_brendan 12 F  &hm_brendan 7 G                                                           &kp H      &hm_brendan 13 J  &kp K             &kp L             &hm_brendan 5 SEMICOLON  &kp ENTER
-&tog 0         &kp Z            &kp X             &hm_brendan 11 C  &kp V             &kp B            &sl 9  &none  &none  &none         &none      &sl 9      &kp N      &kp M             &kp COMMA         &kp DOT           &kp EQUAL                &none
-&none          &none            &none             &none             &none                              &sl 4  &sl 4  &none  &kp LEFT_GUI  &kp SPACE  &kp SPACE             &none             &none             &none             &none                    &none
+&sl 1          &magic 2 0       &sl 3                 &none                  &none                                                                                                       &none                  &none                  &none                 &none                    &none
+&none          &sl 4            &sl 4                 &sl 4                  &sl 4                  &sl 4                                                                     &kp SPACE  &kp SPACE              &kp SPACE              &kp SPACE             &kp SPACE                &none
+&caps_word     &kp Q            &tapkp_holdkp LALT W  &tapkp_holdkp LCTRL E  &kp R                  &kp T                                                                     &kp Y      &kp U                  &tapkp_holdkp LCTRL I  &tapkp_holdkp LALT O  &kp P                    &none
+&kp BACKSPACE  &hm_brendan 8 A  &hm_brendan 10 S      &hm_brendan 6 D        &tapkp_holdkp LSHFT F  &hm_brendan 7 G                                                           &kp H      &tapkp_holdkp LSHFT J  &kp K                  &kp L                 &hm_brendan 5 SEMICOLON  &kp ENTER
+&tog 0         &kp Z            &kp X                 &hm_brendan 11 C       &kp V                  &kp B            &sl 9  &none  &none  &none         &none      &sl 9      &kp N      &kp M                  &kp COMMA              &kp DOT               &kp EQUAL                &none
+&none          &none            &none                 &none                  &none                                   &sl 4  &sl 4  &none  &kp LEFT_GUI  &kp SPACE  &kp SPACE             &none                  &none                  &none                 &none                    &none
             >;
         };
 
@@ -203,12 +217,12 @@
 
         Symbols1 {
             bindings = <
-&trans      &trans  &trans     &trans         &trans                                                                                    &trans         &trans        &trans        &trans         &trans
-&trans      &trans  &trans     &trans         &trans         &trans                                                      &trans         &trans         &trans        &trans        &trans         &trans
-&trans      &trans  &trans     &double_arrow  &single_arrow  &kp GRAVE                                                   &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
-&kp DELETE  &trans  &kp LC(B)  &kp BSLH       &kp FSLH       &kp LBKT                                                    &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &trans
-&trans      &trans  &trans     &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans  &trans  &trans  &trans  &trans   &trans         &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
-&trans      &trans  &trans     &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &kp TAB                 &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &trans           &trans         &trans                                                                                    &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &trans           &trans         &trans         &trans                                                      &trans         &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                   &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
+&kp DELETE  &tmux_scroll  &kp LC(B)        &kp BSLH       &kp FSLH       &kp LBKT                                                    &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &trans
+&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans  &trans  &trans  &trans  &trans   &trans         &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
+&trans      &trans        &trans           &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &kp TAB                 &trans         &trans        &trans        &trans         &trans
             >;
         };
 
@@ -261,7 +275,7 @@
 &trans  &trans     &trans     &trans     &trans                                                                           &trans     &trans      &trans      &trans         &trans
 &trans  &trans     &trans     &trans     &trans     &trans                                                     &trans     &trans     &trans      &trans      &trans         &trans
 &trans  &kp LS(Q)  &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)                                                  &kp LS(Y)  &kp LS(U)  &kp LS(I)   &kp LS(O)   &kp LS(P)      &trans
-&trans  &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)                                                  &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)   &kp LS(COLON)  &trans
+&trans  &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)                                                  &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)   &kp LS(COLON)  &kp LS(ENTER)
 &trans  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)  &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(N)  &kp LS(M)  &kp LS(LT)  &kp LS(GT)  &kp LS(PLUS)   &trans
 &trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans             &trans     &trans      &trans      &trans         &trans
             >;
@@ -286,72 +300,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LG(N0)  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans              &trans      &trans      &trans      &trans  &trans
-            >;
-        };
-
-        R_Half_Shift {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                     &trans     &trans      &trans      &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans     &trans     &trans      &trans      &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LS(Y)  &kp LS(U)  &kp LS(I)   &kp LS(O)   &kp LS(P)      &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)   &kp LS(COLON)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(N)  &kp LS(M)  &kp LS(LT)  &kp LS(GT)  &kp LS(PLUS)   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans             &trans     &trans      &trans      &trans         &trans
-            >;
-        };
-
-        L_Half_Shift {
-            bindings = <
-&trans  &trans     &trans     &trans     &trans                                                                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(Q)  &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        r_half_ctrl {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                     &trans     &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LC(Y)  &kp LC(U)  &kp LC(I)  &kp LC(O)  &kp LC(P)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LC(H)  &kp LC(J)  &kp LC(K)  &kp LC(L)  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(N)  &kp LC(M)  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans             &trans     &trans     &trans     &trans     &trans
-            >;
-        };
-
-        l_half_ctrl {
-            bindings = <
-&trans  &trans     &trans     &trans     &trans                                                                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        l_half_alt {
-            bindings = <
-&trans  &trans     &trans     &trans     &trans                                                                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(Q)  &kp LA(W)  &kp LA(E)  &kp LA(R)  &kp LA(T)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(A)  &kp LA(S)  &kp LA(D)  &kp LA(F)  &kp LA(G)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(Z)  &kp LA(X)  &kp LA(C)  &kp LA(V)  &kp LA(B)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        r_half_alt {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                     &trans     &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LA(Y)  &kp LA(U)  &kp LA(I)  &kp LA(O)  &kp LA(P)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LA(H)  &kp LA(J)  &kp LA(K)  &kp LA(L)  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LA(N)  &kp LA(M)  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans             &trans     &trans     &trans     &trans     &trans
             >;
         };
     };
