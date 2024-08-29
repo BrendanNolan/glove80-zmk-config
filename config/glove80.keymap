@@ -49,7 +49,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            require-prior-idle-ms = <200>;
         };
 
         shift_mod: shift_mod {
@@ -104,7 +103,6 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
-            require-prior-idle-ms = <200>;
         };
     };
 
