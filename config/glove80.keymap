@@ -41,19 +41,20 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        hm_brendan: hm_brendan {
+        layer_mod: layer_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "HM_BRENDAN";
+            label = "LAYER_MOD";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <200>;
         };
 
-        tap_kp_hold_kp_200ms: tap_kp_hold_kp_200ms {
+        shift_mod: shift_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_KP_HOLD_KP_200MS";
+            label = "SHIFT_MOD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -93,6 +94,17 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
+        };
+
+        ctrl_alt_mod: ctrl_alt_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_ALT_MOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            require-prior-idle-ms = <200>;
         };
     };
 
@@ -183,12 +195,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&sl 1          &magic 2 0       &sl 3                         &none                          &none                                                                                                           &none                          &none                          &none                         &none                    &none
-&none          &sl 4            &sl 4                         &sl 4                          &sl 4                          &sl 4                                                                 &kp SPACE  &kp SPACE                      &kp SPACE                      &kp SPACE                     &kp SPACE                &none
-&caps_word     &kp Q            &tap_kp_hold_kp_200ms LALT W  &tap_kp_hold_kp_200ms LCTRL E  &kp R                          &kp T                                                                 &kp Y      &kp U                          &tap_kp_hold_kp_200ms LCTRL I  &tap_kp_hold_kp_200ms LALT O  &kp P                    &none
-&kp BACKSPACE  &hm_brendan 8 A  &hm_brendan 10 S              &hm_brendan 6 D                &tap_kp_hold_kp_200ms LSHFT F  &hm_brendan 7 G                                                       &kp H      &tap_kp_hold_kp_200ms LSHFT J  &kp K                          &kp L                         &hm_brendan 5 SEMICOLON  &kp ENTER
-&tog 0         &kp Z            &kp X                         &hm_brendan 11 C               &kp V                          &kp B            &sl 9  &none  &none  &none         &none  &sl 9      &kp N      &kp M                          &kp COMMA                      &kp DOT                       &kp EQUAL                &none
-&none          &none            &none                         &none                          &none                                           &sl 4  &sl 9  &none  &kp LEFT_GUI  &sl 9  &kp SPACE             &none                          &none                          &none                         &none                    &none
+&sl 1          &magic 2 0      &sl 3                 &none                  &none                                                                                               &none               &none                  &none                 &none                   &none
+&none          &sl 4           &sl 4                 &sl 4                  &sl 4               &sl 4                                                                &kp SPACE  &kp SPACE           &kp SPACE              &kp SPACE             &kp SPACE               &none
+&caps_word     &kp Q           &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R               &kp T                                                                &kp Y      &kp U               &ctrl_alt_mod LCTRL I  &ctrl_alt_mod LALT O  &kp P                   &none
+&kp BACKSPACE  &layer_mod 8 A  &layer_mod 10 S       &layer_mod 6 D         &shift_mod LSHFT F  &layer_mod 7 G                                                       &kp H      &shift_mod LSHFT J  &kp K                  &kp L                 &layer_mod 5 SEMICOLON  &kp ENTER
+&tog 0         &kp Z           &kp X                 &layer_mod 11 C        &kp V               &kp B           &sl 9  &none  &none  &none         &none  &sl 9      &kp N      &kp M               &kp COMMA              &kp DOT               &kp EQUAL               &none
+&none          &none           &none                 &none                  &none                               &sl 4  &sl 9  &none  &kp LEFT_GUI  &sl 9  &kp SPACE             &none               &none                  &none                 &none                   &none
             >;
         };
 
