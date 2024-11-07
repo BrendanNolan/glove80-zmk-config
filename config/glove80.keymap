@@ -193,12 +193,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&sl 1          &magic 2 0      &sl 3                 &none                  &none                                                                                               &none               &none                  &none                 &none                   &none
-&none          &sl 4           &sl 4                 &sl 4                  &sl 4               &sl 4                                                                &kp SPACE  &kp SPACE           &kp SPACE              &kp SPACE             &kp SPACE               &none
-&caps_word     &kp Q           &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R               &kp T                                                                &kp Y      &kp U               &ctrl_alt_mod LCTRL I  &ctrl_alt_mod LALT O  &kp P                   &none
-&kp BACKSPACE  &layer_mod 8 A  &layer_mod 10 S       &layer_mod 6 D         &shift_mod LSHFT F  &layer_mod 7 G                                                       &kp H      &shift_mod LSHFT J  &kp K                  &kp L                 &layer_mod 5 SEMICOLON  &kp ENTER
-&tog 0         &kp Z           &kp X                 &layer_mod 11 C        &kp V               &kp B           &sl 9  &none  &none  &none         &none  &sl 9      &kp N      &kp M               &kp COMMA              &kp DOT               &kp EQUAL               &none
-&none          &none           &none                 &none                  &none                               &sl 4  &sl 9  &none  &kp LEFT_GUI  &sl 9  &kp SPACE             &none               &none                  &none                 &none                   &none
+&sl 1          &magic 2 0      &sl 3                 &none                  &none                                                                                          &none      &none                  &none                 &none                   &none
+&none          &sl 4           &sl 4                 &sl 4                  &sl 4  &sl 4                                                                        &kp SPACE  &kp SPACE  &kp SPACE              &kp SPACE             &kp SPACE               &none
+&caps_word     &kp Q           &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R  &kp T                                                                        &kp Y      &kp U      &ctrl_alt_mod LCTRL I  &ctrl_alt_mod LALT O  &mt LGUI P              &none
+&kp BACKSPACE  &layer_mod 8 A  &layer_mod 10 S       &layer_mod 6 D         &kp F  &layer_mod 7 G                                                               &kp H      &kp J      &kp K                  &kp L                 &layer_mod 5 SEMICOLON  &kp ENTER
+&tog 0         &kp Z           &kp X                 &layer_mod 11 C        &kp V  &kp B           &kp BACKSPACE  &none  &none  &none         &none  &kp ENTER  &kp N      &kp M      &kp COMMA              &kp DOT               &kp EQUAL               &none
+&none          &none           &none                 &none                  &none                  &sl 4          &sl 9  &none  &kp LEFT_GUI  &sl 9  &kp SPACE             &none      &none                  &none                 &none                   &none
             >;
         };
 
@@ -237,12 +237,12 @@
 
         Symbols1 {
             bindings = <
-&trans      &trans        &trans           &trans         &trans                                                                                    &trans         &trans        &trans        &trans         &trans
-&trans      &trans        &trans           &trans         &trans         &trans                                                      &trans         &trans         &trans        &trans        &trans         &trans
-&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                   &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
-&kp DELETE  &tmux_scroll  &kp LC(B)        &kp BSLH       &kp FSLH       &kp LBKT                                                    &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &trans
-&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans  &trans  &trans  &trans  &trans   &trans         &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
-&trans      &trans        &trans           &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &kp TAB                 &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &trans           &trans         &trans                                                                                       &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &trans           &trans         &trans         &trans                                                         &trans         &trans         &trans        &trans        &trans         &trans
+&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                      &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
+&kp DELETE  &tmux_scroll  &kp LC(B)        &kp BSLH       &kp FSLH       &kp LBKT                                                       &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &trans
+&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans  &trans  &trans  &trans  &caps_word  &trans         &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
+&trans      &trans        &trans           &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &kp TAB                    &trans         &trans        &trans        &trans         &trans
             >;
         };
 
