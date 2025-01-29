@@ -224,7 +224,7 @@
 &none          &sl 4                 &sl 4                 &sl 4                  &sl 4                    &sl 4                                                                 &kp SPACE  &kp ENTER                &kp ENTER                      &kp ENTER             &kp SPACE                                &none
 &none          &ctrl_alt_mod LGUI Q  &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R                    &kp T                                                                 &kp Y      &kp U                    &ctrl_alt_mod LCTRL I          &ctrl_alt_mod LALT O  &ctrl_alt_mod LGUI P                     &none
 &kp BACKSPACE  &layer_mod 8 A        &layer_mod 10 S       &layer_mod 6 D         &shift_mod LEFT_SHIFT F  &layer_mod 7 G                                                        &kp H      &shift_mod LEFT_SHIFT J  &tap_kp_hold_kp_150ms K SPACE  &kp L                 &layer_mod 5 SEMICOLON                   &kp ENTER
-&tog 0         &kp Z                 &kp X                 &layer_mod 11 C        &layer_mod 4 V           &kp B           &none  &none          &none  &none  &none      &none  &kp N      &layer_mod 4 M           &kp COMMA                      &kp DOT               &tap_kp_hold_space_equals_space 0 EQUAL  &none
+&tog 0         &kp Z                 &kp X                 &layer_mod 11 C        &layer_mod 13 V          &kp B           &none  &none          &none  &none  &none      &none  &kp N      &layer_mod 12 M          &kp COMMA                      &kp DOT               &tap_kp_hold_space_equals_space 0 EQUAL  &none
 &none          &none                 &none                 &none                  &none                                    &none  &kp BACKSPACE  &none  &none  &kp ENTER  &none             &none                    &none                          &none                 &none                                    &none
             >;
         };
@@ -347,6 +347,28 @@
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LG(N0)  &kp LG(N4)  &kp K       &kp LG(N6)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans              &trans      &trans      &trans      &trans  &trans
+            >;
+        };
+
+        symbols_1_left {
+            bindings = <
+&trans      &trans        &trans           &trans         &trans                                                                                        &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans           &kp DELETE     &trans         &trans                                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                              &trans  &trans  &trans  &trans  &trans  &trans
+&kp DELETE  &tmux_scroll  &kp LC(G)        &kp BSLH       &kp FSLH       &kp LBKT                                                               &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans      &trans  &trans  &trans      &caps_word  &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans           &trans         &trans                    &trans  &kp DELETE  &trans  &trans  &caps_word  &kp TAB             &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        symbols_1_right {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                                 &trans         &trans        &trans        &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                          &trans         &trans         &caps_word    &trans        &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                          &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                          &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &caps_word
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &caps_word  &kp TAB        &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &caps_word  &kp TAB                    &trans         &trans        &trans        &trans         &trans
             >;
         };
     };
