@@ -114,6 +114,16 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
+
+        tap_kp_hold_space_equals_space: tap_kp_hold_space_equals_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_KP_HOLD_SPACE_EQUALS_SPACE";
+            bindings = <&space_equals_space>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+        };
     };
 
     macros {
@@ -179,6 +189,13 @@
             bindings = <&kp LC(G) &kp LEFT_BRACKET &kp QUESTION>;
             label = "TMUX_SEARCH_UP";
         };
+
+        space_equals_space: space_equals_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp EQUAL &kp SPACE>;
+            label = "SPACE_EQUALS_SPACE";
+        };
     };
 
     combos {
@@ -203,12 +220,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&sl 1          &magic 2 0            &sl 3                 &none                  &none                                                                                                     &none                    &none                          &none                 &none                   &none
-&none          &sl 4                 &sl 4                 &sl 4                  &sl 4                    &sl 4                                                                 &kp SPACE  &kp ENTER                &kp ENTER                      &kp ENTER             &kp SPACE               &none
-&none          &ctrl_alt_mod LGUI Q  &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R                    &kp T                                                                 &kp Y      &kp U                    &ctrl_alt_mod LCTRL I          &ctrl_alt_mod LALT O  &ctrl_alt_mod LGUI P    &none
-&kp BACKSPACE  &layer_mod 8 A        &layer_mod 10 S       &layer_mod 6 D         &shift_mod LEFT_SHIFT F  &layer_mod 7 G                                                        &kp H      &shift_mod LEFT_SHIFT J  &tap_kp_hold_kp_150ms K SPACE  &kp L                 &layer_mod 5 SEMICOLON  &kp ENTER
-&tog 0         &kp Z                 &kp X                 &layer_mod 11 C        &layer_mod 4 V           &kp B           &none  &none          &none  &none  &none      &none  &kp N      &layer_mod 4 M           &kp COMMA                      &kp DOT               &kp EQUAL               &none
-&none          &none                 &none                 &none                  &none                                    &none  &kp BACKSPACE  &none  &none  &kp ENTER  &none             &none                    &none                          &none                 &none                   &none
+&sl 1          &magic 2 0            &sl 3                 &none                  &none                                                                                                     &none                    &none                          &none                 &none                                    &none
+&none          &sl 4                 &sl 4                 &sl 4                  &sl 4                    &sl 4                                                                 &kp SPACE  &kp ENTER                &kp ENTER                      &kp ENTER             &kp SPACE                                &none
+&none          &ctrl_alt_mod LGUI Q  &ctrl_alt_mod LALT W  &ctrl_alt_mod LCTRL E  &kp R                    &kp T                                                                 &kp Y      &kp U                    &ctrl_alt_mod LCTRL I          &ctrl_alt_mod LALT O  &ctrl_alt_mod LGUI P                     &none
+&kp BACKSPACE  &layer_mod 8 A        &layer_mod 10 S       &layer_mod 6 D         &shift_mod LEFT_SHIFT F  &layer_mod 7 G                                                        &kp H      &shift_mod LEFT_SHIFT J  &tap_kp_hold_kp_150ms K SPACE  &kp L                 &layer_mod 5 SEMICOLON                   &kp ENTER
+&tog 0         &kp Z                 &kp X                 &layer_mod 11 C        &layer_mod 4 V           &kp B           &none  &none          &none  &none  &none      &none  &kp N      &layer_mod 4 M           &kp COMMA                      &kp DOT               &tap_kp_hold_space_equals_space 0 EQUAL  &none
+&none          &none                 &none                 &none                  &none                                    &none  &kp BACKSPACE  &none  &none  &kp ENTER  &none             &none                    &none                          &none                 &none                                    &none
             >;
         };
 
