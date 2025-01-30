@@ -29,7 +29,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&to 1>;
+            bindings = <&moh 1>, <&to 1>;
         };
 
         magic: magic_hold_tap {
@@ -38,7 +38,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&rgb_ug_status_macro>;
+            bindings = <&moh>, <&rgb_ug_status_macro>;
         };
 
         layer_mod: layer_mod {
@@ -218,7 +218,7 @@
             label = "MI";
         };
 
-        mo: mo {
+        moh: mo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp M &kp O>;
@@ -342,6 +342,55 @@
             #binding-cells = <0>;
             bindings = <&kp V &kp S>;
             label = "VS";
+        };
+
+        vd: vd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp D>;
+            label = "VD";
+        };
+
+        vf: vf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp F>;
+            label = "VF";
+        };
+
+        vg: vg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp G>;
+            label = "VG";
+        };
+
+        vz: vz {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp Z>;
+            label = "VZ";
+        };
+
+        vx: vx {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp X>;
+            label = "VX";
+        };
+
+        vc: vc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp C>;
+            label = "VC";
+        };
+
+        vb: vb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp B>;
+            label = "VB";
         };
     };
 
@@ -499,12 +548,12 @@
 
         symbols_1_left {
             bindings = <
-&trans      &trans        &trans           &trans         &trans                                                                                        &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans           &kp DELETE     &trans         &trans                                                                 &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                              &trans  &trans  &trans  &trans  &trans  &trans
-&kp DELETE  &tmux_scroll  &kp LC(G)        &kp BSLH       &kp FSLH       &kp LBKT                                                               &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans      &trans  &trans  &trans      &caps_word  &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans           &trans         &trans                    &trans  &kp DELETE  &trans  &trans  &caps_word  &kp TAB             &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans           &trans         &trans                                                                                        &trans  &trans   &trans  &trans   &trans
+&trans      &trans        &trans           &kp DELETE     &trans         &trans                                                                 &trans  &trans  &trans   &trans  &trans   &trans
+&trans      &trans        &tmux_search_up  &double_arrow  &single_arrow  &kp GRAVE                                                              &my     &mu     &mi      &moh    &mp      &trans
+&kp DELETE  &tmux_scroll  &kp LC(G)        &kp BSLH       &kp FSLH       &kp LBKT                                                               &mh     &mj     &mk      &ml     &msemco  &trans
+&trans      &trans        &trans           &kp LS(LC(C))  &kp LS(LC(V))  &trans     &trans  &trans      &trans  &trans  &trans      &caps_word  &mn     &trans  &mcomma  &mdot   &meq     &trans
+&trans      &trans        &trans           &trans         &trans                    &trans  &kp DELETE  &trans  &trans  &caps_word  &kp TAB             &trans  &trans   &trans  &trans   &trans
             >;
         };
 
@@ -512,9 +561,9 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                                 &trans         &trans        &trans        &trans         &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                          &trans         &trans         &caps_word    &trans        &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                          &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                          &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &caps_word
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &caps_word  &kp TAB        &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
+&trans  &vq     &vw     &ve     &vr     &vt                                                             &kp LS(TILDE)  &kp LS(UNDER)  &kp MINUS     &kp LS(DQT)   &kp SQT        &trans
+&trans  &va     &vs     &vd     &vf     &vg                                                             &kp RBKT       &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &caps_word
+&trans  &vz     &vx     &vc     &trans  &vb     &trans  &trans  &trans  &trans  &trans      &caps_word  &kp TAB        &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PIPE)  &kp LS(QMARK)  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &caps_word  &kp TAB                    &trans         &trans        &trans        &trans         &trans
             >;
         };
