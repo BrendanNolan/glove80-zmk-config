@@ -401,6 +401,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <41 42>;
         };
+
+        ui_enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
+        };
+
+        er_backspace_combo {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
