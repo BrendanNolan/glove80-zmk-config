@@ -402,16 +402,6 @@
             key-positions = <41 42>;
         };
 
-        ui_enter_combo {
-            bindings = <&kp ENTER>;
-            key-positions = <17 18>;
-        };
-
-        er_backspace_combo {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <13 14>;
-        };
-
         df_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <37 38>;
@@ -420,6 +410,11 @@
         kl_enter {
             bindings = <&kp ENTER>;
             key-positions = <42 43>;
+        };
+
+        m_comma_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <59 60>;
         };
     };
 
