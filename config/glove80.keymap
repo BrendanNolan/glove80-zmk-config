@@ -407,16 +407,6 @@
             key-positions = <37 38>;
         };
 
-        kl_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <42 43>;
-        };
-
-        m_comma_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <59 60>;
-        };
-
         ui_enter {
             bindings = <&kp ENTER>;
             key-positions = <29 30>;
