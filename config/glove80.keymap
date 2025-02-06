@@ -416,6 +416,11 @@
             bindings = <&kp ENTER>;
             key-positions = <59 60>;
         };
+
+        ui_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <29 30>;
+        };
     };
 
     keymap {
