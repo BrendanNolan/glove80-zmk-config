@@ -401,16 +401,6 @@
             bindings = <&kp ESCAPE>;
             key-positions = <41 42>;
         };
-
-        df_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <37 38>;
-        };
-
-        ui_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <29 30>;
-        };
     };
 
     keymap {
