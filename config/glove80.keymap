@@ -401,6 +401,7 @@
             bindings = <&kp ESCAPE>;
             key-positions = <41 42>;
             layers = <0>;
+            timeout-ms = <250>;
         };
     };
 
